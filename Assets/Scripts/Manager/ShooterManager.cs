@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class ShooterManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Subsystem Controls")]
+    public GameObject turret;
+    public GameObject hood;
+    public GameObject flywheel;
+    public GameObject intake;
 
-    // Update is called once per frame
-    void Update()
+    private ShooterControl shooterControl;
+    private TurretControl turretControl;
+    private HoodControl hoodControl;
+    private FlywheelControl flywheelControl;
+    private IntakeControl intakeControl;
+
+    void Awake()
     {
-        
+        shooterControl = turret.GetComponent<ShooterControl>();
+        turretControl = turret.GetComponent<TurretControl>();
+        hoodControl = hood.GetComponent<HoodControl>();
+        flywheelControl = flywheel.GetComponent<FlywheelControl>();
+        intakeControl = intake.GetComponent<IntakeControl>();
     }
 }

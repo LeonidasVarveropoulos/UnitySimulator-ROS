@@ -89,7 +89,7 @@ public class TurretControl : MonoBehaviour
     // Gets the angle from the game object
     public float getAngle()
     {
-        return convertUnityAngle(transform.rotation.eulerAngles.y - 90);
+        return convertUnityAngle(transform.rotation.eulerAngles.y);
     }
 
     // Sets the limits of the turret from the hinge joint
@@ -97,8 +97,8 @@ public class TurretControl : MonoBehaviour
     {
         var hinge = GetComponent<HingeJoint>();
 
-        minAngleLimit = convertUnityAngle(hinge.limits.min - 90);
-        maxAngleLimit = convertUnityAngle(hinge.limits.max - 90);
+        minAngleLimit = convertUnityAngle(hinge.limits.min);
+        maxAngleLimit = convertUnityAngle(hinge.limits.max);
     }
 
     // Wraps the angle in radians

@@ -18,6 +18,7 @@ public class ShooterControl : MonoBehaviour
     [Header("Shooting Control")]
     public float timeBetweenShots = 1.0f;
     public float shotForceMult = 0.5f;
+    public GameObject shootingAngle;
 
     private bool isShooting = false;
 
@@ -37,29 +38,24 @@ public class ShooterControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(Time.time);
-        if (Time.time - timer >= timeBetweenShots)
-        {
-            timer = Time.time;
-            var x = 0.1f * Mathf.Cos((turretControl.getAngle() * Mathf.Rad2Deg + 90) * Mathf.Deg2Rad);
-            var z = 0.1f * Mathf.Sin((turretControl.getAngle() * Mathf.Rad2Deg + 90) * Mathf.Deg2Rad);
-            var newPosition = transform.position;
-            newPosition.x += x;
-            newPosition.z += z;
-            newPosition.y += 0.4f;
-
-            GameObject instance = (GameObject)Instantiate(prefab, newPosition, transform.rotation);
-            var rigid = instance.GetComponent<Rigidbody>();
-
-            var xForce = (flywheelControl.getVelocity() * shotForceMult) * Mathf.Cos((turretControl.getAngle() * Mathf.Rad2Deg + 90) * Mathf.Deg2Rad);
-            var zForce = (flywheelControl.getVelocity() * shotForceMult) * Mathf.Sin((turretControl.getAngle() * Mathf.Rad2Deg + 90) * Mathf.Deg2Rad);
-            var yForce = hoodControl.getAngle();
-            rigid.AddForce(xForce, yForce, zForce, ForceMode.Impulse);
-        }
-      
         if (isShooting)
         {
-    
+            if (Time.time - timer >= timeBetweenShots & intakeControl.getNumberBalls() > 0)
+            {
+                timer = Time.time;
+                var x = 0.0f * Mathf.Cos(turretControl.getAngle());
+                var z = 0.0f * Mathf.Sin(turretControl.getAngle());
+                var newPosition = transform.position;
+                newPosition.x += x;
+                newPosition.z += z;
+                newPosition.y += 0.3f;
+
+                GameObject instance = (GameObject)Instantiate(prefab, newPosition, transform.rotation);
+                var rigid = instance.GetComponent<Rigidbody>();
+
+                rigid.AddForce((shootingAngle.transform.rotation * Vector3.forward) * flywheelControl.getVelocity() * shotForceMult, ForceMode.Impulse);
+                intakeControl.subtractBall();
+            }
         }
     }
 

@@ -12,6 +12,7 @@ public class HoodControl : MonoBehaviour
     [Header("Hood Angle Control (Degrees)")]
     public float angleTolerance = 0.5f;
     public float rotatingAngleVelocity = 30f;
+    public float idleAngle = 28f;
 
     // Turret Default Velocity
     void Start()
@@ -25,20 +26,31 @@ public class HoodControl : MonoBehaviour
     {
         if (wantedAngle != -1)
         {
+            Debug.Log(getAngle() + " " + wantedAngle);
 
             if (Mathf.Abs((float)(getAngle() - wantedAngle)) <= angleTolerance)
             {
                 wantedAngle = -1f;
+                if (getAngle() < wantedAngle)
+                {
+                    setVelocity(-1f);
+                }
+
+                else
+                {
+                    setVelocity(1f);
+                }
+
             }
 
             else if (getAngle() < wantedAngle)
             {
-                setVelocity(rotatingAngleVelocity);
+                setVelocity(-rotatingAngleVelocity);
             }
 
             else
             {
-                setVelocity(-rotatingAngleVelocity);
+                setVelocity(rotatingAngleVelocity);
             }
         }
 
@@ -59,7 +71,7 @@ public class HoodControl : MonoBehaviour
     // Moves the hood to idle position
     public void setIdle()
     {
-        setAngle(minAngleLimit);
+        setAngle(idleAngle);
     }
 
     // Sets the angle
@@ -71,7 +83,7 @@ public class HoodControl : MonoBehaviour
     // Gets the angle from the game object
     public float getAngle()
     {
-        return transform.rotation.eulerAngles.y;
+        return transform.rotation.eulerAngles.x;
     }
 
     // Sets the limits of the turret from the hinge joint
