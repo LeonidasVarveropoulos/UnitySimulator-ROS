@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class HoodControl : MonoBehaviour
 {
-    private double wantedAngle = -1;
+    private float wantedAngle = -1f;
 
-    private double minAngleLimit;
-    private double maxAngleLimit;
+    private float minAngleLimit;
+    private float maxAngleLimit;
 
     [Header("Hood Angle Control (Degrees)")]
-    public double angleTolerance = 0.5;
-    public double rotatingAngleVelocity = 30;
+    public float angleTolerance = 0.5f;
+    public float rotatingAngleVelocity = 30f;
 
     // Turret Default Velocity
     void Start()
@@ -28,7 +28,7 @@ public class HoodControl : MonoBehaviour
 
             if (Mathf.Abs((float)(getAngle() - wantedAngle)) <= angleTolerance)
             {
-                wantedAngle = -1;
+                wantedAngle = -1f;
             }
 
             else if (getAngle() < wantedAngle)
@@ -43,11 +43,11 @@ public class HoodControl : MonoBehaviour
         }
 
         else
-            setVelocity(0.0);
+            setVelocity(0.0f);
     }
 
     // Sets velocity of hood
-    private void setVelocity(double vel)
+    private void setVelocity(float vel)
     {
         var hinge = GetComponent<HingeJoint>();
         var motor = hinge.motor;
@@ -63,13 +63,13 @@ public class HoodControl : MonoBehaviour
     }
 
     // Sets the angle
-    public void setAngle(double angle)
+    public void setAngle(float angle)
     {
         wantedAngle = angle;
     }
 
     // Gets the angle from the game object
-    public double getAngle()
+    public float getAngle()
     {
         return transform.rotation.eulerAngles.y;
     }

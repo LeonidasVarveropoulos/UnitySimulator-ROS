@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TurretControl : MonoBehaviour
 {
-    private double wantedAngle = -1;
+    private float wantedAngle = -1f;
 
-    private double minAngleLimit;
-    private double maxAngleLimit;
+    private float minAngleLimit;
+    private float maxAngleLimit;
 
     [Header("Turret Angle Control")]
-    public double angleTolerance = 0.1;
-    public double rotatingAngleVelocity = 1.0;
+    public float angleTolerance = 0.1f;
+    public float rotatingAngleVelocity = 1.0f;
 
     // Turret Default Velocity
     void Start()
@@ -25,8 +25,8 @@ public class TurretControl : MonoBehaviour
     {
         if (wantedAngle != -1)
         {
-            double negAngleDiff = wrapAngle(getAngle() - wantedAngle);
-            double posAngleDiff = wrapAngle(wantedAngle - getAngle());
+            float negAngleDiff = wrapAngle(getAngle() - wantedAngle);
+            float posAngleDiff = wrapAngle(wantedAngle - getAngle());
 
             if (posAngleDiff <= angleTolerance | negAngleDiff <= angleTolerance)
             {
@@ -38,7 +38,7 @@ public class TurretControl : MonoBehaviour
                 if (wrapAngle(minAngleLimit - getAngle()) <= posAngleDiff)
                 {
                     if (wrapAngle(getAngle() - maxAngleLimit) <= negAngleDiff)
-                        wantedAngle = -1;
+                        wantedAngle = -1f;
                     else
                         setVelocity(-rotatingAngleVelocity);
                 }
@@ -52,7 +52,7 @@ public class TurretControl : MonoBehaviour
                 if (wrapAngle(getAngle() - maxAngleLimit) <= negAngleDiff)
                 {
                     if (wrapAngle(minAngleLimit - getAngle()) <= posAngleDiff)
-                        wantedAngle = -1;
+                        wantedAngle = -1f;
                     else
                         setVelocity(rotatingAngleVelocity);
                 }
@@ -64,7 +64,7 @@ public class TurretControl : MonoBehaviour
     }
 
     // Sets velocity of turret
-    public void setVelocity(double vel)
+    public void setVelocity(float vel)
     {
         var hinge = GetComponent<HingeJoint>();
         var motor = hinge.motor;
@@ -76,18 +76,18 @@ public class TurretControl : MonoBehaviour
     // Stops the turret from moving
     public void setIdle()
     {
-        setVelocity(0.0);
-        wantedAngle = -1;
+        setVelocity(0.0f);
+        wantedAngle = -1f;
     }
 
     // Sets the angle
-    public void setAngle(double angle)
+    public void setAngle(float angle)
     {
         wantedAngle = angle;
     }
 
     // Gets the angle from the game object
-    public double getAngle()
+    public float getAngle()
     {
         return convertUnityAngle(transform.rotation.eulerAngles.y - 90);
     }
@@ -102,7 +102,7 @@ public class TurretControl : MonoBehaviour
     }
 
     // Wraps the angle in radians
-    private double wrapAngle(double angle)
+    private float wrapAngle(float angle)
     {
         if (angle < 0.0)
             return (Mathf.PI * 2) + angle;
@@ -113,7 +113,7 @@ public class TurretControl : MonoBehaviour
     }
 
     // Converts from the unity angle system in degrees to ROS in radians
-    private double convertUnityAngle(double angle)
+    private float convertUnityAngle(float angle)
     {
         if (angle <= 0)
             return (-angle) * (Mathf.PI/180);
