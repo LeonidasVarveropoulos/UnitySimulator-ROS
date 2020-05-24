@@ -8504,6 +8504,11 @@ GameObject:
   - component: {fileID: 1499632169}
   - component: {fileID: 1499632171}
   - component: {fileID: 1499632177}
+  - component: {fileID: 1499632178}
+  - component: {fileID: 1499632187}
+  - component: {fileID: 1499632186}
+  - component: {fileID: 1499632185}
+  - component: {fileID: 1499632184}
   - component: {fileID: 1499632183}
   - component: {fileID: 1499632182}
   - component: {fileID: 1499632181}
@@ -8653,20 +8658,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57286b89382ca6e4a8e916d76cae8bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretVelocity: {fileID: 0}
-  turretVerticalOffset: {fileID: 0}
-  flywheelWantedRpm: {fileID: 0}
-  hoodWantedAngle: {fileID: 0}
-  turretWantedAngle: {fileID: 0}
-  shooterState: {fileID: 0}
-  turretState: {fileID: 0}
-  flywheelState: {fileID: 0}
-  hoodState: {fileID: 0}
-  intakeState: {fileID: 0}
+  turretVelocity: {fileID: 1499632178}
+  turretVerticalOffset: {fileID: 1499632187}
+  flywheelWantedRpm: {fileID: 1499632186}
+  hoodWantedAngle: {fileID: 1499632185}
+  turretWantedAngle: {fileID: 1499632184}
+  intakeState: {fileID: 1499632179}
+  shooterState: {fileID: 1499632183}
+  flywheelState: {fileID: 1499632182}
+  turretState: {fileID: 1499632181}
+  hoodState: {fileID: 1499632180}
   turret: {fileID: 963162599}
   hood: {fileID: 1558802629}
   flywheel: {fileID: 1447489387}
   intake: {fileID: 1301569459}
+--- !u!114 &1499632178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /turret/cmd_vel
+  TimeStep: 0
 --- !u!114 &1499632179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8676,9 +8695,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499632168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8939c4782f1a0e84e859a43db5969ff4, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d04a1bd878aa54fa602914eee46673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: /auto/intake/state
+  TimeStep: 0
 --- !u!114 &1499632180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8688,9 +8709,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499632168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8939c4782f1a0e84e859a43db5969ff4, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d04a1bd878aa54fa602914eee46673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: /auto/hood/state
+  TimeStep: 0
 --- !u!114 &1499632181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8700,9 +8723,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499632168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8939c4782f1a0e84e859a43db5969ff4, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d04a1bd878aa54fa602914eee46673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: /auto/turret/state
+  TimeStep: 0
 --- !u!114 &1499632182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8712,9 +8737,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499632168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8939c4782f1a0e84e859a43db5969ff4, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d04a1bd878aa54fa602914eee46673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: /auto/flywheel/state
+  TimeStep: 0
 --- !u!114 &1499632183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8724,9 +8751,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499632168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8939c4782f1a0e84e859a43db5969ff4, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d04a1bd878aa54fa602914eee46673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Topic: /auto/shooter/state
+  TimeStep: 0
+--- !u!114 &1499632184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /auto/turret/wanted/angle
+  TimeStep: 0
+--- !u!114 &1499632185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /auto/hood/wanted/angle
+  TimeStep: 0
+--- !u!114 &1499632186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /auto/flywheel/wanted/rpm
+  TimeStep: 0
+--- !u!114 &1499632187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /turret/y_offset
+  TimeStep: 0
 --- !u!1 &1500618123
 GameObject:
   m_ObjectHideFlags: 0

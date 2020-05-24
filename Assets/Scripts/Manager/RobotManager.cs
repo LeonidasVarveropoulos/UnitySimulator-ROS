@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class RobotManager : MonoBehaviour
 {
-    [Header("Simple Subscriber and Publisher")]
-    public SimpleSubscriberPublisher node;
+    [Header("Subscribers- Float")]
+    public RosSharp.RosBridgeClient.FloatSubscriber turretVelocity;
+    public RosSharp.RosBridgeClient.FloatSubscriber turretVerticalOffset;
+    public RosSharp.RosBridgeClient.FloatSubscriber flywheelWantedRpm;
+    public RosSharp.RosBridgeClient.FloatSubscriber hoodWantedAngle;
+    public RosSharp.RosBridgeClient.FloatSubscriber turretWantedAngle;
+
+    [Header("Subscribers- String")]
+    public RosSharp.RosBridgeClient.StringSubscriber intakeState;
+    public RosSharp.RosBridgeClient.StringSubscriber shooterState;
+    public RosSharp.RosBridgeClient.StringSubscriber flywheelState;
+    public RosSharp.RosBridgeClient.StringSubscriber turretState; 
+    public RosSharp.RosBridgeClient.StringSubscriber hoodState;
 
     [Header("Subsystem Controls")]
     public GameObject turret;
