@@ -2365,7 +2365,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5089,6 +5089,7 @@ Transform:
   - {fileID: 1558802630}
   - {fileID: 1447489388}
   - {fileID: 342069708}
+  - {fileID: 1373076320}
   m_Father: {fileID: 394455455}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5124,8 +5125,8 @@ MonoBehaviour:
   hood: {fileID: 1558802629}
   flywheel: {fileID: 1447489387}
   intake: {fileID: 1301569459}
-  timeBetweenShots: 1
-  shotForceMult: 0.01
+  timeBetweenShots: 0.6
+  shotForceMult: 0.0045
   shootingAngle: {fileID: 1974607967}
   prefab: {fileID: 3803749760896298219, guid: 712e41b83e5ce364382c5bd61648c360, type: 3}
 --- !u!114 &963162603
@@ -6952,6 +6953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerCellText: {fileID: 2052186275}
   maxNumberBalls: 5
+  timeOfBallContact: 0.2
   wantedVelocity: 150
 --- !u!114 &1301569461
 MonoBehaviour:
@@ -7734,6 +7736,89 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9283bd0474152134791050c593188599, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1222c7267b53b6449c768b7c08a0ee1, type: 3}
+--- !u!1 &1373076319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373076320}
+  - component: {fileID: 1373076322}
+  - component: {fileID: 1373076321}
+  m_Layer: 0
+  m_Name: ShootingCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1373076320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373076319}
+  m_LocalRotation: {x: -0.24149545, y: 0.000000029802322, z: -0, w: 0.97040194}
+  m_LocalPosition: {x: 0, y: 0.265, z: -0.473}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 963162600}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -27.95, y: 0, z: 0}
+--- !u!81 &1373076321
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373076319}
+  m_Enabled: 0
+--- !u!20 &1373076322
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373076319}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 1
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!43 &1406111072
 Mesh:
   m_ObjectHideFlags: 0
@@ -8247,7 +8332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerIncreament: 0.1
   slider: {fileID: 817208876}
-  maxRpm: 2800
+  maxRpm: 4500
 --- !u!138 &1447489390
 FixedJoint:
   m_ObjectHideFlags: 0
@@ -8528,16 +8613,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499632168}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a908e83b1e7ce9e428caae2838615cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /unity/image
+  Topic: /d435/color/image_raw
   ImageCamera: {fileID: 342069709}
   FrameId: Camera
   resolutionWidth: 640
   resolutionHeight: 480
+  rate: 15
   qualityLevel: 50
 --- !u!114 &1499632170
 MonoBehaviour:
@@ -10572,7 +10658,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5dcf1d8116bf55243a0ba444e94b0387, type: 2}
+      objectReference: {fileID: 2100000, guid: 97f956392ad0a4c4a8f5c2fb7e2c7e46, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8a2bf83f2793540b5d0320f41e75f9, type: 3}
 --- !u!1 &1857129195

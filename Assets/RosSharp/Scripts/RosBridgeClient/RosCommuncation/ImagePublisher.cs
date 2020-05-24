@@ -26,6 +26,7 @@ namespace RosSharp.RosBridgeClient
         public string FrameId = "Camera";
         public int resolutionWidth = 640;
         public int resolutionHeight = 480;
+        public float rate = 15f;
         [Range(0, 100)]
         public int qualityLevel = 50;
 
@@ -33,18 +34,25 @@ namespace RosSharp.RosBridgeClient
         private Texture2D texture2D;
         private Rect rect;
 
+        private float timer = 0.0f;
+
         protected override void Start()
         {
             base.Start();
             InitializeGameObject();
             InitializeMessage();
             Camera.onPostRender += UpdateImage;
+            timer = Time.time;
         }
 
         private void UpdateImage(Camera _camera)
         {
             if (texture2D != null && _camera == this.ImageCamera)
-                UpdateMessage();
+                if (Time.time - timer >= 1.0f / rate)
+                {
+                    UpdateMessage();
+                    timer = Time.time;
+                }
         }
 
         private void InitializeGameObject()

@@ -50,22 +50,24 @@ public class RobotManager : MonoBehaviour
         if (shooterState.getData() == "idle")
         {
             // Turret
-            if (turretState.getData() == "idle")
-                turretControl.setIdle();
-            else if (turretState.getData() == "rotate_turret")
+            if (turretState.getData() == "rotate_turret")
                 turretControl.setAngle(turretWantedAngle.getData());
+            else
+                turretControl.setIdle();
 
             // Flywheel
-            if (flywheelState.getData() == "idle")
-                flywheelControl.setIdle();
-            else if (flywheelState.getData() == "spin_up")
+            if (flywheelState.getData() == "spin_up")
                 flywheelControl.setVelocity(flywheelWantedRpm.getData());
+            else
+                flywheelControl.setIdle();
 
             // Hood
-            if (hoodState.getData() == "idle")
-                hoodControl.setIdle();
-            else if (hoodState.getData() == "rotate_hood")
+            if (hoodState.getData() == "rotate_hood")
                 hoodControl.setAngle(hoodWantedAngle.getData());
+            else
+                hoodControl.setIdle();
+
+            shooterControl.setIdle();
 
         }
         else if (shooterState.getData() == "prime")

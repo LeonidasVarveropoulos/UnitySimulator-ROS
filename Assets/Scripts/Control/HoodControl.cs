@@ -26,7 +26,6 @@ public class HoodControl : MonoBehaviour
     {
         if (wantedAngle != -1)
         {
-            Debug.Log(getAngle() + " " + wantedAngle);
 
             if (Mathf.Abs((float)(getAngle() - wantedAngle)) <= angleTolerance)
             {

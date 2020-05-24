@@ -61,9 +61,6 @@ public class ShooterControl : MonoBehaviour
 
     public void setIdle()
     {
-        turretControl.setIdle();
-        hoodControl.setIdle();
-        flywheelControl.setIdle();
         isShooting = false;
     }
 

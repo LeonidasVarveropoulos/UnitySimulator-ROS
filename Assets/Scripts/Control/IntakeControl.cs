@@ -10,9 +10,12 @@ public class IntakeControl : MonoBehaviour
     [Header("Ball Pickup")]
     public Text powerCellText;
     public int maxNumberBalls = 5;
+    public float timeOfBallContact = 1.0f;
 
     [Header("Intake Motor")]
     public int wantedVelocity = 150;
+
+    private float timer = 0.0f;
 
     // Intake Motor Control
     void Start()
@@ -42,6 +45,15 @@ public class IntakeControl : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "PowerCell" && numBalls < maxNumberBalls)
+        {
+            timer = Time.time;
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+     
+        if (collision.collider.tag == "PowerCell" && numBalls < maxNumberBalls && Time.time - timer >= timeOfBallContact)
         {
             numBalls++;
             Destroy(collision.collider.gameObject);
