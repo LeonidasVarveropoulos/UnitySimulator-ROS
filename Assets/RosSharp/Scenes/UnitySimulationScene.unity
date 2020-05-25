@@ -2365,7 +2365,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 26.991467
+  field of view: 45
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5125,8 +5125,8 @@ MonoBehaviour:
   hood: {fileID: 1558802629}
   flywheel: {fileID: 1447489387}
   intake: {fileID: 1301569459}
-  timeBetweenShots: 0.6
-  shotForceMult: 0.0045
+  timeBetweenShots: 0.3
+  shotForceMult: 0.0027
   shootingAngle: {fileID: 1974607967}
   prefab: {fileID: 3803749760896298219, guid: 712e41b83e5ce364382c5bd61648c360, type: 3}
 --- !u!114 &963162603
@@ -6953,7 +6953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerCellText: {fileID: 2052186275}
   maxNumberBalls: 5
-  timeOfBallContact: 0.2
+  timeOfBallContact: 0.08
   wantedVelocity: 150
 --- !u!114 &1301569461
 MonoBehaviour:
@@ -8656,6 +8656,9 @@ MonoBehaviour:
   TimeStep: 0
   SubscribedTransform: {fileID: 394455455}
   reliesOnRateOfPublish: 0
+  usesRollingAverage: 1
+  rollingLinearLength: 20
+  rollingAngularLength: 5
 --- !u!114 &1499632172
 MonoBehaviour:
   m_ObjectHideFlags: 0

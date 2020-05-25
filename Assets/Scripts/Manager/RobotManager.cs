@@ -72,14 +72,15 @@ public class RobotManager : MonoBehaviour
         }
         else if (shooterState.getData() == "prime")
         {
-            var hoodAngle = (((Mathf.Exp(-0.106665f * turretVerticalOffset.getData()) * 40.5628f) + 1.0f) / 89.8105f) + 43.3079f;
-            var flywheelRpm = (((Mathf.Exp(-0.092559f * turretVerticalOffset.getData()) * 24.7655f) + 1.0f) / 7795.87f) + 1810.29f;
+            var hoodAngle = (Mathf.Pow(turretVerticalOffset.getData(), 2.0f) * -0.177536f) + (turretVerticalOffset.getData() * 4.88588f) + 30.3647f;
+            var flywheelRpm = 4000f;
             shooterControl.setPrime(turretVelocity.getData(), hoodAngle, flywheelRpm);
+            Debug.Log(hoodAngle + " " + flywheelRpm);
         }
         else if (shooterState.getData() == "shoot")
         {
-            var hoodAngle = (((Mathf.Exp(-0.106665f * turretVerticalOffset.getData()) * 40.5628f) + 1.0f) / 89.8105f) + 43.3079f;
-            var flywheelRpm = (((Mathf.Exp(-0.092559f * turretVerticalOffset.getData()) * 24.7655f) + 1.0f) / 7795.87f) + 1810.29f;
+            var hoodAngle = (Mathf.Pow(turretVerticalOffset.getData(), 2.0f) * -0.177536f) + (turretVerticalOffset.getData() * 4.88588f) + 30.3647f;
+            var flywheelRpm = 4000f;
             shooterControl.setPrime(turretVelocity.getData(), hoodAngle, flywheelRpm);
             shooterControl.setShoot();
         }
