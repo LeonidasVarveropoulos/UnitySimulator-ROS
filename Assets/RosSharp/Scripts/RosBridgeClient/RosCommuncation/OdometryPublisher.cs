@@ -49,12 +49,12 @@ namespace RosSharp.RosBridgeClient
                          0.0, 0.0, 0.0, 0.0, 0.0001, 0.0,
                          0.0, 0.0, 0.0, 0.0, 0.0, 0.0001};
 
-            GetGeometryPoint(PublishedTransform.position.Unity2Ros(), message.pose.pose.position);
-            GetGeometryQuaternion(PublishedTransform.rotation.Unity2Ros(), message.pose.pose.orientation);
+            GetGeometryPoint(PublishedTransform.localPosition.Unity2Ros(), message.pose.pose.position);
+            GetGeometryQuaternion(PublishedTransform.localRotation.Unity2Ros(), message.pose.pose.orientation);
             message.pose.covariance = cov;
 
-            GetVelocityLinear(PublishedTransform.position.Unity2Ros(), message.twist.twist.linear, deltaTime);
-            GetVelocityAngular(PublishedTransform.rotation.Unity2Ros(), message.twist.twist.angular, deltaTime);
+            GetVelocityLinear(PublishedTransform.localPosition.Unity2Ros(), message.twist.twist.linear, deltaTime);
+            GetVelocityAngular(PublishedTransform.localRotation.Unity2Ros(), message.twist.twist.angular, deltaTime);
             message.twist.covariance = cov;
 
             Publish(message);

@@ -32,7 +32,7 @@ namespace RosSharp.RosBridgeClient
         public int rollingAngularLength = 20;
 
         private float previousRealTime;
-        private Vector3 linearVelocity;
+        private Vector3 linearVelocity = new Vector3();
         private Vector3 angularVelocity;
         private bool isMessageReceived;
 
@@ -68,7 +68,7 @@ namespace RosSharp.RosBridgeClient
             return new Vector3((float)geometryVector3.x, (float)geometryVector3.y, (float)geometryVector3.z);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (reliesOnRateOfPublish)
             {
