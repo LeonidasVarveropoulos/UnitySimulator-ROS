@@ -8588,7 +8588,7 @@ GameObject:
   - component: {fileID: 1499632176}
   - component: {fileID: 1499632169}
   - component: {fileID: 1499632171}
-  - component: {fileID: 1499632188}
+  - component: {fileID: 1499632189}
   - component: {fileID: 1499632177}
   - component: {fileID: 1499632178}
   - component: {fileID: 1499632187}
@@ -8902,7 +8902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /turret/y_offset
   TimeStep: 0
---- !u!114 &1499632188
+--- !u!114 &1499632189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8911,12 +8911,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499632168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cce4b414bd56154285dfd6d4deb4a10, type: 3}
+  m_Script: {fileID: 11500000, guid: 0227eab72d82e224e8be48779abdb2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /robot_set_pose
   TimeStep: 0
-  baseLink: {fileID: 394455455}
+  SubscribedTransform: {fileID: 394455455}
 --- !u!1 &1500618123
 GameObject:
   m_ObjectHideFlags: 0
