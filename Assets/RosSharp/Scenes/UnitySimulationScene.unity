@@ -1403,6 +1403,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GeometryType: 3
+--- !u!1 &171142197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171142198}
+  m_Layer: 0
+  m_Name: map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &171142198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171142197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.031, y: 0.055, z: -7.991}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1121117083}
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &218680025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2607,8 +2638,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394455454}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 0.257, z: 2.317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1568491531}
@@ -5166,7 +5197,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000011920929, y: 0.37999997, z: 0.23199987}
+  m_ConnectedAnchor: {x: -0.00000011920929, y: 0.38, z: 0.23200011}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -6025,13 +6056,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121117081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.09, y: 0, z: -7.89}
+  m_LocalPosition: {x: 1.33, y: 0, z: 3.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1979448820}
   - {fileID: 394455455}
-  m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_Father: {fileID: 171142198}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1130529264
 PrefabInstance:
@@ -6978,7 +7009,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000011920929, y: 0.20000002, z: -0.296}
+  m_ConnectedAnchor: {x: -0.00000011920929, y: 0.19999999, z: -0.29599977}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -8657,7 +8688,7 @@ MonoBehaviour:
   TimeStep: 0
   SubscribedTransform: {fileID: 394455455}
   reliesOnRateOfPublish: 0
-  usesRollingAverage: 1
+  usesRollingAverage: 0
   rollingLinearLength: 25
   rollingAngularLength: 20
 --- !u!114 &1499632172
@@ -8916,7 +8947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /robot_set_pose
   TimeStep: 0
-  SubscribedTransform: {fileID: 394455455}
+  GlobalTransform: {fileID: 1121117083}
+  LocalTransform: {fileID: 394455455}
 --- !u!1 &1500618123
 GameObject:
   m_ObjectHideFlags: 0
