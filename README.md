@@ -9,6 +9,7 @@ This is a quick demo that displays the Unity simulator working alongside ROS
 [![Video](https://user-images.githubusercontent.com/55664403/81489736-dfe25080-923e-11ea-8f55-c2d01ca1d112.jpg)](https://www.youtube.com/watch?v=A66TlzYuKSo)
 
 ## Diagram
-<div style="text-align:center"><img src="https://user-images.githubusercontent.com/55664403/81491807-1082b400-9258-11ea-9c78-776d219f0a99.png" width=600 /></div>
 
-This simulator replaces the RoboRio and all the sensor sources represented above.
+This simulator replaces the RoboRio and all the sensor sources represented below.
+
+<div style="text-align:center"><img src="https://user-images.githubusercontent.com/55664403/81491807-1082b400-9258-11ea-9c78-776d219f0a99.png" width=600 /></div>
