@@ -1,5 +1,7 @@
 # UnitySimulator-ROS
-The goal of this repository is to provide a working example and framework of an FRC robot using ROS to other teams, so that they too can explore the advantages of ROS. This repository hosts the ROS code from the 2020 FRC Season Robot created by [FRC Team 624](http://team624.org/) and is configured for the game Infinite Recharge with certain sensors. However, it is **not** difficult to implement your own sensors and game specific content into this framework. When testing on a non-FRC robot, the proxy node can be replaced to interface with your hardware. If you are interested in learning how to get ROS working for yourself with a simulator and the physical robot or looking for a more detailed documentation, check out the [ROS wiki](https://github.com/LeonidasVarveropoulos/robot-frc/wiki) of this repository.
+This repository is a Unity simulator that works alongside the ROS code in order to accurately simulate robot control. The code running on the physical robot and alongside the simulator are the same. The project above is the complete simulator without the CAD models due to their large file size. For more information, documentation, and the ROS robot code look at the [robot-frc](https://github.com/LeonidasVarveropoulos/robot-frc) repository.
+
+This was done using the [ros-sharp](https://github.com/siemens/ros-sharp) library.
 
 ## Demo (Video)
 This is a quick demo that displays the Unity simulator working alongside ROS
