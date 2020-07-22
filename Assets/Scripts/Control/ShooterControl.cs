@@ -43,8 +43,8 @@ public class ShooterControl : MonoBehaviour
             if (Time.time - timer >= timeBetweenShots & intakeControl.getNumberBalls() > 0)
             {
                 timer = Time.time;
-                var x = 0.0f * Mathf.Cos(turretControl.getAngle());
-                var z = 0.0f * Mathf.Sin(turretControl.getAngle());
+                var x = 0.0f * Mathf.Cos(turretControl.getData());
+                var z = 0.0f * Mathf.Sin(turretControl.getData());
                 var newPosition = transform.position;
                 newPosition.x += x;
                 newPosition.z += z;
@@ -53,7 +53,7 @@ public class ShooterControl : MonoBehaviour
                 GameObject instance = (GameObject)Instantiate(prefab, newPosition, transform.rotation);
                 var rigid = instance.GetComponent<Rigidbody>();
 
-                rigid.AddForce((shootingAngle.transform.rotation * Vector3.forward) * flywheelControl.getVelocity() * shotForceMult, ForceMode.Impulse);
+                rigid.AddForce((shootingAngle.transform.rotation * Vector3.forward) * flywheelControl.getData() * shotForceMult, ForceMode.Impulse);
                 intakeControl.subtractBall();
             }
         }

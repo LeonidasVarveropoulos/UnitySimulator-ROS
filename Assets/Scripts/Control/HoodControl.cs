@@ -27,10 +27,10 @@ public class HoodControl : MonoBehaviour
         if (wantedAngle != -1)
         {
 
-            if (Mathf.Abs((float)(getAngle() - wantedAngle)) <= angleTolerance)
+            if (Mathf.Abs((float)(getData() - wantedAngle)) <= angleTolerance)
             {
                 wantedAngle = -1f;
-                if (getAngle() < wantedAngle)
+                if (getData() < wantedAngle)
                 {
                     setVelocity(-1f);
                 }
@@ -42,7 +42,7 @@ public class HoodControl : MonoBehaviour
 
             }
 
-            else if (getAngle() < wantedAngle)
+            else if (getData() < wantedAngle)
             {
                 setVelocity(-rotatingAngleVelocity);
             }
@@ -80,7 +80,7 @@ public class HoodControl : MonoBehaviour
     }
 
     // Gets the angle from the game object
-    public float getAngle()
+    public float getData()
     {
         return transform.rotation.eulerAngles.x;
     }

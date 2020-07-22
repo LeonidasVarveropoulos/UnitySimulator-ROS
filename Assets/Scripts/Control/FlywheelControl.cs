@@ -47,7 +47,7 @@ public class FlywheelControl : MonoBehaviour
         wantedVelocity = vel;
     }
 
-    public float getVelocity()
+    public float getData()
     {
         return currentVelocity;
     }

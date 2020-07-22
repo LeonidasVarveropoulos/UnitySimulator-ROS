@@ -23,10 +23,11 @@ public class TurretControl : MonoBehaviour
     // Turret Angle Control
     void Update()
     {
+        Debug.Log(getData());
         if (wantedAngle != -1)
         {
-            float negAngleDiff = wrapAngle(getAngle() - wantedAngle);
-            float posAngleDiff = wrapAngle(wantedAngle - getAngle());
+            float negAngleDiff = wrapAngle(getData() - wantedAngle);
+            float posAngleDiff = wrapAngle(wantedAngle - getData());
 
             if (posAngleDiff <= angleTolerance | negAngleDiff <= angleTolerance)
             {
@@ -35,9 +36,9 @@ public class TurretControl : MonoBehaviour
 
             else if (posAngleDiff < negAngleDiff)
             {
-                if (wrapAngle(minAngleLimit - getAngle()) <= posAngleDiff)
+                if (wrapAngle(minAngleLimit - getData()) <= posAngleDiff)
                 {
-                    if (wrapAngle(getAngle() - maxAngleLimit) <= negAngleDiff)
+                    if (wrapAngle(getData() - maxAngleLimit) <= negAngleDiff)
                         wantedAngle = -1f;
                     else
                         setVelocity(-rotatingAngleVelocity);
@@ -49,9 +50,9 @@ public class TurretControl : MonoBehaviour
 
             else
             {
-                if (wrapAngle(getAngle() - maxAngleLimit) <= negAngleDiff)
+                if (wrapAngle(getData() - maxAngleLimit) <= negAngleDiff)
                 {
-                    if (wrapAngle(minAngleLimit - getAngle()) <= posAngleDiff)
+                    if (wrapAngle(minAngleLimit - getData()) <= posAngleDiff)
                         wantedAngle = -1f;
                     else
                         setVelocity(rotatingAngleVelocity);
@@ -87,9 +88,9 @@ public class TurretControl : MonoBehaviour
     }
 
     // Gets the angle from the game object
-    public float getAngle()
+    public float getData()
     {
-        return convertUnityAngle(transform.rotation.eulerAngles.y);
+        return convertUnityAngle(transform.localEulerAngles.y);
     }
 
     // Sets the limits of the turret from the hinge joint
