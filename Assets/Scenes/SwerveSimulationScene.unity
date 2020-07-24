@@ -1816,6 +1816,7 @@ GameObject:
   - component: {fileID: 450832025}
   - component: {fileID: 450832024}
   - component: {fileID: 450832029}
+  - component: {fileID: 450832030}
   m_Layer: 0
   m_Name: front_right_wheel
   m_TagString: Untagged
@@ -1848,7 +1849,7 @@ HingeJoint:
   m_GameObject: {fileID: 450832022}
   m_ConnectedBody: {fileID: 1900707084}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.00000008940697, y: -0.0000000037252903, z: 0.000000059604645}
   m_UseSpring: 0
@@ -1873,7 +1874,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 500
 --- !u!114 &450832025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,6 +1946,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &450832030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450832022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &462333764 stripped
@@ -2215,6 +2228,7 @@ GameObject:
   - component: {fileID: 603494997}
   - component: {fileID: 603494996}
   - component: {fileID: 603495000}
+  - component: {fileID: 603495001}
   m_Layer: 0
   m_Name: front_left_module
   m_TagString: Untagged
@@ -2272,7 +2286,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 1
+  m_UseMotor: 0
   m_Motor:
     targetVelocity: 0
     force: 10
@@ -2345,6 +2359,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &603495001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603494993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &690372495
@@ -3648,6 +3674,7 @@ GameObject:
   - component: {fileID: 923407597}
   - component: {fileID: 923407596}
   - component: {fileID: 923407600}
+  - component: {fileID: 923407601}
   m_Layer: 0
   m_Name: back_right_module
   m_TagString: Untagged
@@ -3705,7 +3732,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 1
+  m_UseMotor: 0
   m_Motor:
     targetVelocity: 0
     force: 10
@@ -3778,6 +3805,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &923407601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923407593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &927957141 stripped
@@ -4195,6 +4234,7 @@ GameObject:
   - component: {fileID: 1017748601}
   - component: {fileID: 1017748600}
   - component: {fileID: 1017748604}
+  - component: {fileID: 1017748605}
   m_Layer: 0
   m_Name: back_left_module
   m_TagString: Untagged
@@ -4252,7 +4292,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 1
+  m_UseMotor: 0
   m_Motor:
     targetVelocity: 0
     force: 10
@@ -4325,6 +4365,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1017748605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017748597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1025618561
@@ -6454,8 +6506,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.55213386, y: 1, z: 1}
+  m_Center: {x: -0.010208128, y: 0, z: 0}
 --- !u!1 &1362445966
 GameObject:
   m_ObjectHideFlags: 8
@@ -6514,6 +6566,7 @@ GameObject:
   - component: {fileID: 1376853105}
   - component: {fileID: 1376853104}
   - component: {fileID: 1376853109}
+  - component: {fileID: 1376853110}
   m_Layer: 0
   m_Name: back_right_wheel
   m_TagString: Untagged
@@ -6546,7 +6599,7 @@ HingeJoint:
   m_GameObject: {fileID: 1376853102}
   m_ConnectedBody: {fileID: 923407595}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.00000008940697, y: -0.0000000037252903, z: -0.00000011920929}
   m_UseSpring: 0
@@ -6571,7 +6624,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 500
 --- !u!114 &1376853105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6645,6 +6698,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1376853110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376853102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379104652
 GameObject:
   m_ObjectHideFlags: 0
@@ -6710,6 +6775,7 @@ GameObject:
   - component: {fileID: 1391251628}
   - component: {fileID: 1391251627}
   - component: {fileID: 1391251632}
+  - component: {fileID: 1391251633}
   m_Layer: 0
   m_Name: back_left_wheel
   m_TagString: Untagged
@@ -6742,7 +6808,7 @@ HingeJoint:
   m_GameObject: {fileID: 1391251625}
   m_ConnectedBody: {fileID: 1017748599}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.00000014901161, y: -0.0000000037252903, z: -0.00000011920929}
   m_UseSpring: 0
@@ -6767,7 +6833,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 500
 --- !u!114 &1391251628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6839,6 +6905,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1391251633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391251625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1398872181
@@ -7471,6 +7549,7 @@ GameObject:
   - component: {fileID: 1499632191}
   - component: {fileID: 1499632190}
   - component: {fileID: 1499632188}
+  - component: {fileID: 1499632192}
   m_Layer: 0
   m_Name: RosConnector
   m_TagString: Untagged
@@ -7839,6 +7918,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /auto/turret/current/angle
   turret: {fileID: 291068704}
+--- !u!114 &1499632192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685f153a172edbb458d20fda9f577e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500618123
 GameObject:
   m_ObjectHideFlags: 0
@@ -8941,8 +9032,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5573538, y: 1, z: 1}
+  m_Center: {x: -0.0027685042, y: 0, z: 0}
 --- !u!1 &1853212109
 GameObject:
   m_ObjectHideFlags: 8
@@ -9001,6 +9092,7 @@ GameObject:
   - component: {fileID: 1867691888}
   - component: {fileID: 1867691887}
   - component: {fileID: 1867691892}
+  - component: {fileID: 1867691893}
   m_Layer: 0
   m_Name: front_left_wheel
   m_TagString: Untagged
@@ -9033,7 +9125,7 @@ HingeJoint:
   m_GameObject: {fileID: 1867691885}
   m_ConnectedBody: {fileID: 603494995}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.00000014901161, y: -0.0000000037252903, z: 0.000000059604645}
   m_UseSpring: 0
@@ -9058,7 +9150,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 500
 --- !u!114 &1867691888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9130,6 +9222,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1867691893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867691885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1869665805
@@ -9350,6 +9454,7 @@ GameObject:
   - component: {fileID: 1900707086}
   - component: {fileID: 1900707085}
   - component: {fileID: 1900707089}
+  - component: {fileID: 1900707090}
   m_Layer: 0
   m_Name: front_right_module
   m_TagString: Untagged
@@ -9407,10 +9512,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 1
+  m_UseMotor: 0
   m_Motor:
     targetVelocity: 0
-    force: 10
+    force: 0
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -9480,6 +9585,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3122a7138a008c14f83e8b3df6286693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1900707090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900707082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1901965846
