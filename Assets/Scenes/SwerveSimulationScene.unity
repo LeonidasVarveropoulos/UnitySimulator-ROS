@@ -1857,10 +1857,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 0
+    force: 20
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -1874,7 +1874,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 500
+  m_ConnectedMassScale: 10
 --- !u!114 &450832025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,6 +1960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velMulti: 200
 --- !u!4 &462333764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1979410942526912831, guid: 530d2551315a08d459fe31c6e6335080,
@@ -2286,10 +2287,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 10
+    force: 50
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -2303,7 +2304,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 10
 --- !u!114 &603494997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2373,6 +2374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRotatingAngleVelocity: 200
+  minRotatingAngleVelocity: 17
+  angleTolerance: 5
 --- !u!1 &690372495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,13 +2649,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747403820}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00016525619}
-  m_LocalPosition: {x: -3.344, y: 0.359, z: 2.096}
+  m_LocalRotation: {x: -0.000057061632, y: 0.93849534, z: -0.34529197, w: -0.00015509217}
+  m_LocalPosition: {x: -1.985, y: 0.481, z: -4.588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 31
-  m_LocalEulerAnglesHint: {x: 0, y: 180.019, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.399002, y: 180.019, z: 0}
 --- !u!1001 &761379273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3732,10 +3736,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 10
+    force: 50
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -3749,7 +3753,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 10
 --- !u!114 &923407597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3819,6 +3823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRotatingAngleVelocity: 200
+  minRotatingAngleVelocity: 17
+  angleTolerance: 5
 --- !u!4 &927957141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8703856713952426642, guid: 18e9c8d5972657e40addbfe42a897b51,
@@ -4292,10 +4299,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 10
+    force: 50
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -4309,7 +4316,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 10
 --- !u!114 &1017748601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4379,6 +4386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRotatingAngleVelocity: 200
+  minRotatingAngleVelocity: 17
+  angleTolerance: 5
 --- !u!1 &1025618561
 GameObject:
   m_ObjectHideFlags: 0
@@ -6607,10 +6617,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 0
+    force: 20
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -6624,7 +6634,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 500
+  m_ConnectedMassScale: 10
 --- !u!114 &1376853105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6710,6 +6720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velMulti: 200
 --- !u!1 &1379104652
 GameObject:
   m_ObjectHideFlags: 0
@@ -6816,10 +6827,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 0
+    force: 20
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -6833,7 +6844,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 500
+  m_ConnectedMassScale: 10
 --- !u!114 &1391251628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6919,6 +6930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velMulti: 200
 --- !u!1 &1398872181
 GameObject:
   m_ObjectHideFlags: 8
@@ -7550,6 +7562,14 @@ GameObject:
   - component: {fileID: 1499632190}
   - component: {fileID: 1499632188}
   - component: {fileID: 1499632192}
+  - component: {fileID: 1499632200}
+  - component: {fileID: 1499632199}
+  - component: {fileID: 1499632198}
+  - component: {fileID: 1499632197}
+  - component: {fileID: 1499632196}
+  - component: {fileID: 1499632195}
+  - component: {fileID: 1499632194}
+  - component: {fileID: 1499632193}
   m_Layer: 0
   m_Name: RosConnector
   m_TagString: Untagged
@@ -7930,6 +7950,134 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685f153a172edbb458d20fda9f577e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wantedFrontRightAngle: {fileID: 1499632200}
+  wantedFrontRightWheel: {fileID: 1499632199}
+  wantedFrontLeftAngle: {fileID: 1499632198}
+  wantedFrontLeftWheel: {fileID: 1499632197}
+  wantedBackRightAngle: {fileID: 1499632196}
+  wantedBackRightWheel: {fileID: 1499632195}
+  wantedBackLeftAngle: {fileID: 1499632194}
+  wantedBackLeftWheel: {fileID: 1499632193}
+  frontRightModule: {fileID: 1900707082}
+  frontRightWheel: {fileID: 450832022}
+  frontLeftModule: {fileID: 603494993}
+  frontLeftWheel: {fileID: 1867691885}
+  backRightModule: {fileID: 923407593}
+  backRightWheel: {fileID: 1376853102}
+  backLeftModule: {fileID: 1017748597}
+  backLeftWheel: {fileID: 1391251625}
+--- !u!114 &1499632193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_back_left/vel
+  TimeStep: 0
+--- !u!114 &1499632194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_back_left/angle
+  TimeStep: 0
+--- !u!114 &1499632195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_back_right/vel
+  TimeStep: 0
+--- !u!114 &1499632196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_back_right/angle
+  TimeStep: 0
+--- !u!114 &1499632197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_front_left/vel
+  TimeStep: 0
+--- !u!114 &1499632198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_front_left/angle
+  TimeStep: 0
+--- !u!114 &1499632199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_front_right/vel
+  TimeStep: 0
+--- !u!114 &1499632200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499632168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a400304abc6ff6445a454130224f3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /swerve_front_right/angle
+  TimeStep: 0
 --- !u!1 &1500618123
 GameObject:
   m_ObjectHideFlags: 0
@@ -9133,10 +9281,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 0
+    force: 20
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -9150,7 +9298,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 500
+  m_ConnectedMassScale: 10
 --- !u!114 &1867691888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9236,6 +9384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c12ea23a47bac4f95eabc77d5a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velMulti: 200
 --- !u!1 &1869665805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9512,10 +9661,10 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
-    force: 0
+    force: 50
     freeSpin: 0
   m_UseLimits: 0
   m_Limits:
@@ -9529,7 +9678,7 @@ HingeJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 10
 --- !u!114 &1900707086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9599,6 +9748,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a71b7557988dcd4fa368334165af57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRotatingAngleVelocity: 200
+  minRotatingAngleVelocity: 17
+  angleTolerance: 5
 --- !u!1001 &1901965846
 PrefabInstance:
   m_ObjectHideFlags: 0
