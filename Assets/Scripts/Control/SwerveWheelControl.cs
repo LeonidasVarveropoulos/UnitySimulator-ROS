@@ -9,7 +9,7 @@ public class SwerveWheelControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setVelocity(1f);
+        setVelocity(0f);
     }
 
 
