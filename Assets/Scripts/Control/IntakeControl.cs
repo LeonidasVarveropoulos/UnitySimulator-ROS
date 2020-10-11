@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class IntakeControl : MonoBehaviour
 {
-    private int numBalls = 3;
 
     [Header("Ball Pickup")]
     public Text powerCellText;
     public int maxNumberBalls = 5;
+    public int numBalls = 3;
     public float timeOfBallContact = 1.0f;
+    public string coliderTag = "PowerCell";
 
     [Header("Intake Motor")]
-    public int wantedVelocity = 150;
+    public float wantedVelocity = 150f;
 
     private float timer = 0.0f;
 
@@ -44,7 +45,7 @@ public class IntakeControl : MonoBehaviour
     // Ball Pickup
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "PowerCell" && numBalls < maxNumberBalls)
+        if (collision.collider.tag == coliderTag && numBalls < maxNumberBalls)
         {
             timer = Time.time;
         }
@@ -53,7 +54,7 @@ public class IntakeControl : MonoBehaviour
     void OnCollisionStay(Collision collision)
     {
      
-        if (collision.collider.tag == "PowerCell" && numBalls < maxNumberBalls && Time.time - timer >= timeOfBallContact)
+        if (collision.collider.tag == coliderTag && numBalls < maxNumberBalls && Time.time - timer >= timeOfBallContact)
         {
             numBalls++;
             Destroy(collision.collider.gameObject);
@@ -69,11 +70,16 @@ public class IntakeControl : MonoBehaviour
 
     void updateText()
     {
-        powerCellText.text = "Power Cells: " + numBalls;
+        powerCellText.text = coliderTag + ": " + numBalls;
     }
 
     public int getNumberBalls()
     {
         return numBalls;
+    }
+
+    public void setVelocity(float x)
+    {
+        wantedVelocity = x;
     }
 }
